@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<project>
+  <fileVersion>2</fileVersion>
+  <fileChecksum>2155443115</fileChecksum>
+  <configuration>
+    <name>Debug</name>
+    <outputs>
+      <file>$PROJ_DIR$\battery_50.c</file>
+      <file>$PROJ_DIR$\C\ADC12.c</file>
+      <file>$PROJ_DIR$\main.c</file>
+      <file>$PROJ_DIR$\msp430fr59xx_p1_03.c</file>
+      <file>$TOOLKIT_DIR$\inc\msp430.h</file>
+      <file>$PROJ_DIR$\msp430fr59xx_tb0_16.c</file>
+      <file>$PROJ_DIR$\Debug\Obj\msp430fr59xx_tb0_16.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\battery_50.pbd</file>
+      <file>$TOOLKIT_DIR$\inc\in430.h</file>
+      <file>$TOOLKIT_DIR$\config\linker\multiplier32.xcl</file>
+      <file>$PROJ_DIR$\Debug\Obj\msp430fr59xx_tb0_16.__cstat.et</file>
+      <file>$TOOLKIT_DIR$\lib\dlib\dl430xlsfn.r43</file>
+      <file>$PROJ_DIR$\Debug\Obj\battery_50.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\ADC12.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\battery_50.r43</file>
+      <file>$TOOLKIT_DIR$\inc\intrinsics.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\msp430fr59xx_tb0_16.r43</file>
+      <file>$TOOLKIT_DIR$\inc\msp430fr5949.h</file>
+      <file>$TOOLKIT_DIR$\config\linker\lnk430fr5949.xcl</file>
+      <file>$PROJ_DIR$\Debug\Exe\battery_50.ulp</file>
+      <file>$PROJ_DIR$\Debug\Exe\battery_50.d43</file>
+      <file>$PROJ_DIR$\Debug\Obj\battery_50.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\ADC12.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\main.r43</file>
+      <file>$PROJ_DIR$\battery_50.h</file>
+      <file>$PROJ_DIR$\Debug\Obj\ADC12.r43</file>
+      <file>$PROJ_DIR$\Debug\Obj\msp430fr59xx_p1_03.__cstat.et</file>
+      <file>$PROJ_DIR$\Debug\Obj\msp430fr59xx_p1_03.pbi</file>
+      <file>$PROJ_DIR$\Debug\Obj\msp430fr59xx_p1_03.r43</file>
+    </outputs>
+    <file>
+      <name>[ROOT_NODE]</name>
+      <outputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 20</file>
+        </tool>
+        <tool>
+          <name>ULP430</name>
+          <file> 19</file>
+        </tool>
+      </outputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\battery_50.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 12</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 14</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 21</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 15 26 17 8</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 17 8 15 26</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\C\ADC12.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 22</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 27</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 13</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 17 8 15 26</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 26 17 8 15</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\main.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 24</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 25</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 23</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 8 15 17 26</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 17 8 15 26</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\msp430fr59xx_p1_03.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 29</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 30</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 28</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 8 17 15 4</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 4 17 8 15</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\msp430fr59xx_tb0_16.c</name>
+      <outputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 6</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 16</file>
+        </tool>
+        <tool>
+          <name>__cstat</name>
+          <file> 10</file>
+        </tool>
+      </outputs>
+      <inputs>
+        <tool>
+          <name>BICOMP</name>
+          <file> 8 17 15 4</file>
+        </tool>
+        <tool>
+          <name>ICC430</name>
+          <file> 4 17 8 15</file>
+        </tool>
+      </inputs>
+    </file>
+    <file>
+      <name>$PROJ_DIR$\Debug\Exe\battery_50.d43</name>
+      <inputs>
+        <tool>
+          <name>XLINK</name>
+          <file> 18 9 27 14 25 11</file>
+        </tool>
+      </inputs>
+    </file>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\main.c</name>
+      <tool>C-STAT</tool>
+    </forcedrebuild>
+    <forcedrebuild>
+      <name>$PROJ_DIR$\msp430fr59xx_p1_03.c</name>
+      <tool>C-STAT</tool>
+    </forcedrebuild>
+  </configuration>
+  <configuration>
+    <name>Release</name>
+    <outputs/>
+    <forcedrebuild>
+      <name>[MULTI_TOOL]</name>
+      <tool>XLINK</tool>
+    </forcedrebuild>
+  </configuration>
+</project>
+
+
