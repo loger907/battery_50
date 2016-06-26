@@ -22,6 +22,8 @@ extern float DATA_ADC;
 extern float Sum_ADC;//存储一组电池总电压
 extern int PWM_Duty;//PWM占空比
 extern float Adc_value[5][10];//分别存储5个区域10个通道的ADC的值
+extern char S1_flag;
+extern char S2_flag;
 void Init_Clk(void);//初始化时钟
 void Uart_Init(void);//串口初始化
 uint8_t Get_char(void);//接收一个字节的串口数据

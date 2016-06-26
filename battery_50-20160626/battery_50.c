@@ -211,10 +211,11 @@ uint8_t IsOver_3V(void)
   float temp[5]={0};//定义一个临时数组变量，存放各路的最高电压值
   for(char i=0;i<5;i++)
   {
-    for(char k=0;k<10;k++)//取出每一组的最高电压
+    temp[i]=Adc_value[i][0];//第一个数值用来作比较
+    for(char k=0;k<9;k++)//取出每一组的最高电压
     {
-      if(temp[i]<Adc_value[i][k])
-        temp[i] = Adc_value[i][k];
+      if(temp[i]<(Adc_value[i][k+1]-Adc_value[i][k]))
+        temp[i] = (Adc_value[i][k+1]-Adc_value[i][k]);
     }
   }
   for(char i=0;i<4;i++)
@@ -1084,6 +1085,13 @@ void Step_8(void)
           PWM(2000000,PWM_Duty);//下调占空比5%
         }
       }
+      Off_IO1;//关闭I01,关闭电池板块1
+      Off_IO2;//关闭I02,关闭电池板块2
+      Off_IO4;//关闭I03,关闭电池板块3
+      Off_IO4;//关闭I04,关闭电池板块4
+      Off_IO5;//关闭I05,关闭电池板块5
+      Off_PWM;//关闭PWM输出
+      PWM(2000000,0);//PWM直接输出低电平，停止充电
       state = 0;//切换到充电的第0阶段
       break;  
     default:
@@ -1105,6 +1113,7 @@ void Charging(void)
   On_IO1;//打开I01,激活电池板块1
   if(1.5>Get_ADC(13))//如果总电池电压低于30V，分压比例为1:20
   {
+    Send_Str("The battery is under 30V\n");//电池总电压低于30V
     On_PWM;//使能PWM
     PWM(2000000,PWM_Duty);//200k Hz
     if(0.015>Get_ADC(14))//如果采样电阻的电压<0.015v
@@ -1121,27 +1130,8 @@ void Charging(void)
   }
   else //如果总电压高于30V,恒流充电
   {
-    On_PWM;//使能PWM
-    PWM(2000000,(int)PWM_Duty);//200k Hz
-    if(0.15>Get_ADC(14))//如果采样电阻的电压<0.15v
-    {
-      PWM_Duty +=5;
-      if(PWM_Duty>100)PWM_Duty=100;//保证占空比不超过100%
-      PWM(2000000,PWM_Duty);//上调占空比5%      
-    }
-    else //如果采样电阻的电压>0.15v
-    {
-      PWM_Duty -=5;
-      PWM(2000000,PWM_Duty);//下调占空比5%
-    }
-    if(PWM_Duty==100)//进入恒压充电
-    {
-      if(0.015>Get_ADC(14))//如果采样电阻的电压<0.015v的时候，在停止充电
-      {
-        PWM(2000000,0);//PWM直接输出低电平
-      }
-    }
-      
+    Send_Str("The battery is beyond 30V\n");//电池总电压低于30V
+    Step_8();//进入恒流充电
   }
 }
 //按键中断服务程序,P1.6、P1.7
@@ -1149,13 +1139,14 @@ void Charging(void)
 __interrupt void Port_1(void)
 {
   P1IE &=  ~(BIT6+BIT7);                                // BIT6+BIT7关掉中断
-  if((P1IFG & BIT6) == BIT6)                            //如果是自检按键中断
+  if((P1IFG & BIT6) == BIT6)                            //S3按键
   {
     P1IFG &= ~BIT6;                                     // P1.6IFG cleared
   }
-  else if((P1IFG & BIT7) == BIT7)//如果是电池切换按键中断
+  else if((P1IFG & BIT7) == BIT7)//S2按键
   {
     P1IFG &= ~BIT7; // P1.7 IFG cleared
+    S2_flag =1;
   }
   P1IE |=BIT6+BIT7;//打开中断  
 }
@@ -1164,7 +1155,7 @@ __interrupt void Port_1(void)
 __interrupt void Port_2(void)
 {
   P2IE &=  ~BIT7;                                // BIT7关掉中断
-  if((P2IFG & BIT7) == BIT7)                            //如果是自检按键中断
+  if((P2IFG & BIT7) == BIT7)                            
   {
     P2IFG &= ~BIT7;                                     // P2.7IFG cleared
     __delay_cycles(20000);//延时20mS
@@ -1180,8 +1171,9 @@ __interrupt void Port_2(void)
 __interrupt void Port_4(void)
 {
   P4IE &=  ~BIT4;                                // BIT4关掉中断
-  if((P4IFG & BIT4) == BIT4)                            //如果是开机按键中断
+  if((P4IFG & BIT4) == BIT4)                            //S1按键
   {
+    S1_flag = 1;
     P4IFG &= ~BIT4;                                     // P4.4IFG cleared
     LPM0_EXIT;                                        // 唤醒低功耗LPM0
   }
