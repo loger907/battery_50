@@ -1,12 +1,12 @@
-"C:\Users\Administrator\Desktop\Ð»ÐÅÆæ\Software\battery_50-20160617\main.c"
+"D:\xiexinqi\Software\battery_50-20160617\main.c"
 -std=c99
 -ferror-limit=100
 -I
-C:\Users\Administrator\Desktop\Ð»ÐÅÆæ\Software\battery_50-20160617\C
+D:\xiexinqi\Software\battery_50-20160617\C
 -I
-C:\Users\Administrator\Desktop\Ð»ÐÅÆæ\Software\battery_50-20160617
+D:\xiexinqi\Software\battery_50-20160617
 -I
-C:\Users\Administrator\Desktop\Ð»ÐÅÆæ\Software\battery_50-20160617\Iclude
+D:\xiexinqi\Software\battery_50-20160617\Iclude
 -I
 F:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\430\inc\dlib
 -I
@@ -14,11 +14,11 @@ F:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\430\inc
 -I
 F:\Program Files (x86)\IAR Systems\Embedded Workbench 7.2\430\inc\dlib\c
 -I
-C:\Users\Administrator\Desktop\Ð»ÐÅÆæ\Software\battery_50-20160617\C
+D:\xiexinqi\Software\battery_50-20160617\C
 -I
-C:\Users\Administrator\Desktop\Ð»ÐÅÆæ\Software\battery_50-20160617
+D:\xiexinqi\Software\battery_50-20160617
 -I
-C:\Users\Administrator\Desktop\Ð»ÐÅÆæ\Software\battery_50-20160617\Iclude
+D:\xiexinqi\Software\battery_50-20160617\Iclude
 -D__MSP430FR5949__=1
 -D__CHAR_BITS__=8
 -D__CHAR_MAX__=0xff

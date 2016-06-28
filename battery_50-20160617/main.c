@@ -46,7 +46,7 @@ void main(void)
    Init_Clk();//初始化时钟.ACLK=32768，MCLK=SMCLK=1M
    Uart_Init();//初始化串口，Tx--P2.5;Rx--P2.6
    ADC12_Init();//初始化ADC12
-//   PWM_Init();//PWM初始化
+   PWM_Init();//PWM初始化
    __bis_SR_register(GIE); 
    while(1)
    {
